@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>AI Text Summarizer - Awesome Presentation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            color: #fff;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .step {
+            width: 900px;
+            padding: 40px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+            opacity: 0.3;
+            transition: opacity 1s, transform 1s;
+        }
+
+        .step.active {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 900;
+            margin: 0 0 20px 0;
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        .highlight {
+            color: #00f2fe;
+            font-weight: bold;
+        }
+
+        ul {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #d1d5db;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+            font-size: 0.9em;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .badge {
+            background: rgba(79, 172, 254, 0.2);
+            border: 1px solid rgba(79, 172, 254, 0.4);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #4facfe;
+            letter-spacing: 1px;
+        }
+
+        .hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        /* Ambient floating particles in background */
+        .particles {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="impress-not-supported">
+
+<div class="particles" id="particles"></div>
+
+<div class="hint">
+    <p>Use <b>Spacebar</b>, <b>Arrow Keys</b>, or <b>Swipe</b> to navigate</p>
+</div>
+
+<div id="impress">
+
+    <!-- Slide 1: Welcome -->
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <h1>AI Text Summarizer</h1>
+        <p style="font-size: 1.8em; color: #fff;">A Zero-Shot Intelligent Agent</p>
+        <div class="badge-container">
+            <div class="badge">Google ADK</div>
+            <div class="badge">Gemini 2.5 Flash</div>
+            <div class="badge">Cloud Run</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div id="problem" class="step" data-x="-2000" data-y="3000" data-z="-3000" data-rotate="90" data-scale="2">
+        <h2>The Core Objective</h2>
+        <p>In the modern world, <span class="highlight">information overload</span> is destroying productivity.</p>
+        <p>Our goal was to build a tool with <strong>surgical precision</strong>:</p>
+        <div style="background: rgba(0, 242, 254, 0.1); padding: 20px; border-left: 4px solid #00f2fe; margin-top: 20px;">
+            A highly-focused, single-purpose AI agent precisely engineered for Text Summarization, doing *one* thing flawlessly.
+        </div>
+    </div>
+
+    <!-- Slide 3: Architecture -->
+    <div id="architecture" class="step" data-x="3000" data-y="3000" data-z="-1500" data-rotate-x="45" data-rotate-y="45" data-scale="3">
+        <h2>System Architecture</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Glassmorphic Web UI delivered dynamically via FastAPI.</li>
+            <li><strong>Backend:</strong> High-performance Python 3.11 async API using Pydantic.</li>
+            <li><strong>Agent Core:</strong> <code>google-adk</code> InMemoryRunner mapped precisely to <code>gemini-2.5-flash</code>.</li>
+            <li><strong>Deployment:</strong> Stateless Docker container scaling infinitely on Cloud Run.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 4: Why it wins -->
+    <div id="why-it-wins" class="step" data-x="6000" data-y="-1000" data-z="2000" data-rotate-x="-40" data-rotate-y="90" data-scale="2">
+        <h2>Why This Submission Shines</h2>
+        <p>This isn't just a prototype; it's a <strong>production-ready</strong> cloud native service.</p>
+        <ul style="margin-top: 30px;">
+            <li><span class="highlight">Radical Focus:</span> Strictly adheres to the 'one simple capability' rule.</li>
+            <li><span class="highlight">Production-Grade:</span> Fully typed, robust containerization, REST API structured payload.</li>
+            <li><span class="highlight">Instant QA:</span> Ships with an embedded web UI for instantaneous zero-setup testing.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 5: The End -->
+    <div id="live-demo" class="step" data-x="0" data-y="-3000" data-scale="6">
+        <h1 style="font-size: 2.5em;">Live Demo & Deployment</h1>
+        <p style="margin-top: 40px;">The agent is fully online and awaiting traffic.</p>
+        
+        <p style="font-size: 0.9em; margin-top: 50px; color: #4facfe; font-family: monospace;">
+            > https://text-summarizer-agent-458014734484.us-central1.run.app
+        </p>
+        <p style="font-size: 0.9em; color: rgba(255,255,255,0.5); font-family: monospace;">
+            > https://github.com/Partha-Sarathi-Mishra/text-summarizer-agent
+        </p>
+    </div>
+
+    <!-- Overview (zooms way out to see everything) -->
+    <div id="overview" class="step" data-x="1500" data-y="0" data-z="-1000" data-scale="15"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/impress.js@1.1.0/js/impress.min.js"></script>
+<script>
+    // Initialize Impress 3D engine
+    impress().init();
+
+    // Create ambient particles
+    const container = document.getElementById('particles');
+    for(let i=0; i<30; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 5 + 2;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.animationDelay = (Math.random() * 20) + 's';
+        p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        container.appendChild(p);
+    }
+</script>
+
+</body>
+</html>
