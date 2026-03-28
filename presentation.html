@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer Agent - Presentation</title>
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/blood.min.css" id="theme">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .reveal {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #090e17, #1e1b4b, #111827, #312e81);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: normal;
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .reveal h1 { font-size: 3.5em; }
+        .reveal h2 { font-size: 2.2em; margin-bottom: 30px; }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .reveal p, .reveal li {
+            color: #f8fafc;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .reveal ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .reveal li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .reveal li::before {
+            content: "✨";
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.15);
+            border-left: 4px solid #6366f1;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .badges img {
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 8px;
+        }
+
+        .footer-note {
+            font-size: 0.5em !important;
+            color: #94a3b8 !important;
+            margin-top: 50px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Title -->
+            <section>
+                <div class="glass-panel">
+                    <h1>AI Text Summarizer</h1>
+                    <h3 style="color: #94a3b8; -webkit-text-fill-color: #94a3b8; font-weight: 300; margin-top: 20px;">
+                        A Next-Generation Cloud Run Agent
+                    </h3>
+                    <div style="margin-top: 50px;" class="badges">
+                        <img src="https://img.shields.io/badge/Google_Cloud-Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white">
+                        <img src="https://img.shields.io/badge/Gemini-2.5_Flash-8E75B2?style=for-the-badge&logo=google&logoColor=white">
+                        <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: The Core Objective -->
+            <section>
+                <div class="glass-panel">
+                    <h2>The Core Objective</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 40px;">
+                        Information overload is destroying productivity. We need surgical precision, not generalized chatbots.
+                    </p>
+                    <div class="highlight-box">
+                        <h4 style="color: white; margin: 0 0 10px 0; font-family: Inter;">Our Solution Strategy:</h4>
+                        <p style="margin: 0; font-size: 0.9em; color: #e2e8f0;">
+                            A highly-focused, single-purpose AI agent strictly engineered for <strong>Text Summarization</strong>. By leveraging zero-shot intelligence via Google ADK, we instantly distill complex documents into clear insights.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Architecture -->
+            <section>
+                <h2>System Architecture</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                    <div class="glass-panel" style="padding: 30px;">
+                        <h3 style="font-size: 1.5em;">Frontend</h3>
+                        <p style="font-size: 0.9em;">Zero-dependency Glassmorphic Web UI delivered dynamically via FastAPI HTML responses.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 30px;">
+                        <h3 style="font-size: 1.5em;">Backend</h3>
+                        <p style="font-size: 0.9em;">High-performance Python 3.11 asynchronous API using Pydantic for rigid schema validation.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 30px;">
+                        <h3 style="font-size: 1.5em;">Agent Core</h3>
+                        <p style="font-size: 0.9em;"><code>google-adk</code> InMemoryRunner mapped precisely to <code>gemini-2.5-flash</code> logic.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 30px;">
+                        <h3 style="font-size: 1.5em;">Deployment</h3>
+                        <p style="font-size: 0.9em;">Stateless Docker container scaling instantly from zero to infinity on Google Cloud Run.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Key Differentiators -->
+            <section>
+                <div class="glass-panel">
+                    <h2>Why This Submission Wins</h2>
+                    <ul>
+                        <li><strong>Radical Focus:</strong> Strictly adheres to the "one simple capability" rule. No feature bloat, just immaculate summarization.</li>
+                        <li><strong>Production-Grade:</strong> Replaces messy scripts with a fully typed, containerized, & validated REST API.</li>
+                        <li><strong>Instant QA Testing:</strong> Shipped with a gorgeous embedded Web UI, allowing reviewers to instantly test the model via browser without ever needing to use Postman or CLI.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 5: Demo / Close -->
+            <section>
+                <div class="glass-panel">
+                    <h1>Ready for Production</h1>
+                    <p style="font-size: 1.3em; margin: 40px 0;">
+                        Seamlessly combining modern web aesthetics with cutting-edge Google Generative AI.
+                    </p>
+                    <a href="https://text-summarizer-agent-458014734484.us-central1.run.app" target="_blank" style="display: inline-block; background: #6366f1; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-family: Inter;">
+                        Launch Live Application
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            autoAnimate: true
+        });
+    </script>
+</body>
+</html>
